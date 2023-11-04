@@ -21,10 +21,10 @@ from scipy import signal
 import math
 
 
-def switch_on_bot():
+def switch_on_bot(config):
 
     emotion_classifier = EmotionClassifier()
-    token_bot = 'AAAAAAAA'
+    token_bot = config['discord_api_key']
 
     intents = discord.Intents.default()
     intents.message_content = True
@@ -210,7 +210,7 @@ def switch_on_bot():
     @client.command()
     async def library_roulette(ctx, username):
 
-        steam_api_key = 'AAAAAAAAAAAA'
+        steam_api_key = config['steam_api_key']
 
         url = f'http://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/?key={steam_api_key}&vanityurl={username}'
 
@@ -248,7 +248,7 @@ def switch_on_bot():
         chosen_element = random.randint(0, 19)
 
         url = "https://api.rawg.io/api/games?key="
-        rawg_api_key = 'AAAAAAAAAAAAAAAA'
+        rawg_api_key = config['rawg_api_key']
 
         if store is not None:
 
