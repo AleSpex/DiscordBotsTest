@@ -1,0 +1,5 @@
+#[---[API Keys]---]
+#Substitute "empty" value with the corresponding API key
+discord_api_key=empty
+steam_api_key=empty
+rawg_api_key=empty
